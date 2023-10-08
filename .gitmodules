@@ -7,3 +7,6 @@
 [submodule "mediacenter"]
 	path = mediacenter
 	url = https://github.com/px57/dj-media-center.git
+[submodule "kernel"]
+	path = kernel
+	url = https://github.com/px57/dj-kernel
