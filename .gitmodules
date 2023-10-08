@@ -10,3 +10,6 @@
 [submodule "kernel"]
 	path = kernel
 	url = https://github.com/px57/dj-kernel
+[submodule "token_manager"]
+	path = token_manager
+	url = https://github.com/px57/dj-token-manager
