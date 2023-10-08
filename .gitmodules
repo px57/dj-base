@@ -4,3 +4,6 @@
 [submodule "index"]
 	path = index
 	url = https://github.com/px57/dj-index.git
+[submodule "mediacenter"]
+	path = mediacenter
+	url = https://github.com/px57/dj-media-center.git
