@@ -1,0 +1,242 @@
+{% load i18n %} 
+<!DOCTYPE html>
+<html lang="fr" translate="no">
+  <head>
+    <meta charset="utf-8" />
+    <title>talkto • Private Marketplace</title>
+    <base href="/">    <meta name="description" content="Join TalkTo to video call your favourite influencers and professionals, YouTubers, TikTokers + more." />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/FAVICON_TALKTO/favicon.ico" />
+    <link href="./assets/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="./assets/js/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+    <!-- Start of  Zendesk Widget script -->
+
+    <!--   <script type="text/javascript">
+         window.zESettings = {
+           webWidget: {
+             chat: {
+               connectOnPageLoad: false
+             }
+           }
+         };
+         </script>
+         <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d8b858e7-cf8c-4651-83e4-e5a9281cb3cc"></script> -->
+    <!-- End of  Zendesk Widget script -->
+    <script type="text/javascript" src="https://js.authorize.net/v1/Accept.js" charset="utf-8"></script>
+
+    <script type="text/javascript" src="src/assets/js/selector.js"></script>
+
+    <script type="text/javascript">
+
+        let loaded_mobile_icon = false;
+
+        function injectCssRule(list) {
+            for (let rule of list) {
+              var style = document.createElement('style');
+              document.head.appendChild(style);
+              style.sheet.insertRule(rule);
+            }
+        }
+
+        function load_mobile_icon() {
+/*          if (!(window.innerWidth < 612) || loaded_mobile_icon) { return;}
+          loaded_mobile_icon = true;
+          injectCssRule([
+              '.bg-HOME {background:url("/assets/img/icons_mobile.png") -10px -10px}',
+              '.bg-HOME_ACTIVATED {background:url("/assets/img/icons_mobile.png") -10px -10px}',
+              '.bg-ORDER {background:url("/assets/img/icons_mobile.png") -10px -54px}',
+              '.bg-ORDER_ACTIVATED {background:url("/assets/img/icons_mobile.png") -65px -10px}',
+              '.bg-CALENDAR {background:url("/assets/img/icons_mobile.png") -98px -10px}',
+              '.bg-CALENDAR_ACTIVATED {background:url("/assets/img/icons_mobile.png") -10px -65px}',
+              '.bg-WALLET {background:url("/assets/img/icons_mobile.png") -10px -98px}',
+              '.bg-WALLET_ACTIVATED {background:url("/assets/img/icons_mobile.png") -65px -65px}',
+              '.bg-CALENDAR_ACTIVATED { background: url("/assets/img/icons_mobile.png") -98px -54px }'
+          ]);*/
+        }
+        load_mobile_icon();
+
+    </script>
+
+    <style>
+    body.dark-mode .loading-container {
+       background-color: #242526 !important;
+    }
+
+    body.dark-mode .icon-e_loaderlogo {
+      background: #e4e6eb !important;
+      -webkit-background-clip: text !important;
+    }
+
+    #chatWaitRoom, #webWidget {
+       z-index: 1000000!important;
+      }
+    .subloadingcontainer {
+      display: inline-block;
+    }
+    .loading-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      z-index: 100000 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon-e_logo2{
+      background: -webkit-linear-gradient(#ff952a,#ff643f, #ff2759, #e01366);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 45px;
+    }
+    .logo-loader {
+      transform: rotate(-45deg) scale(1);
+      animation: pulse 1.8s linear infinite;
+    }
+    .logoloaderimg {
+      transform: rotate(45deg);
+    }
+    @keyframes pulse {
+      0% {
+        transform: rotate(-45deg) scale(1);
+      }
+      10% {
+        transform: rotate(-45deg) scale(1.1);
+      }
+      20% {
+        transform: rotate(-45deg) scale(0.9);
+      }
+      30% {
+        transform: rotate(-45deg) scale(1.2);
+      }
+      40% {
+        transform: rotate(-45deg) scale(0.9);
+      }
+      50% {
+        transform: rotate(-45deg) scale(1.05);
+      }
+      60% {
+        transform: rotate(-45deg) scale(0.95);
+      }
+      70% {
+        transform: rotate(-45deg) scale(1);
+      }
+    }
+
+    .bg-PENDING_COLOR {
+      width: 30px; height: 30px;
+      background: url("/assets/img/all_icons.png") -65px -10px;
+  }
+
+
+    .bg-snapchat {
+        width: 15px; height: 15px;
+        background: url("/assets/img/all_icons.png") -165px -10px;
+    }
+
+
+    .bg-tiktok {
+        width: 15px; height: 15px;
+        background: url("/assets/img/all_icons.png") -165px -45px;
+    }
+
+
+    .bg-youtube {
+        width: 18px; height: 13px;
+        background: url("/assets/img/all_icons.png") -10px -115px;
+    }
+
+
+    .bg-ACCEPTED {
+        width: 30px; height: 30px;
+        background: url("/assets/img/all_icons.png") -10px -65px;
+    }
+
+
+    .bg-ALERT_COLOR {
+        width: 30px; height: 30px;
+        background: url("/assets/img/all_icons.png") -60px -65px;
+    }
+
+
+    .bg-COMPLETED_COLOR {
+        width: 30px; height: 30px;
+        background: url("/assets/img/all_icons.png") -115px -10px;
+    }
+
+
+    .bg-DECLINED {
+        width: 30px; height: 30px;
+        background: url("/assets/img/all_icons.png") -115px -60px;
+    }
+
+
+    .bg-hand {
+        width: 35px; height: 35px;
+        background: url("/assets/img/all_icons.png") -10px -10px;
+    }
+
+
+    .bg-instagram {
+        width: 15px; height: 15px;
+        background: url("/assets/img/all_icons.png") -165px -80px;
+    }
+
+    </style>
+    <link rel="stylesheet" href="./assets/icomoon.css" />
+  <link rel="stylesheet" href="./assets/src/fr/styles.856383231176e50408d7.css"></head>
+  <body class="mat-typography home theme-talkto layout-site dark featured-image">
+    <app-root>
+      <div class="loading-container">
+        <div class="subloadingcontainer">
+          <div class="logoloaderimg">
+            <div class="logo-loader">
+              <span class="icon-e_logo2"></span>
+             </div>
+          </div>
+        </div>
+      </div>
+    </app-root>
+  <script src="./assets/src/fr/runtime.8c019195c37a988254ac.js" defer></script><script src="./assets/src/fr/polyfills.59a69806825fa238d7a0.js" defer></script><script src="scripts.5855e2a2af2edbd94bf7.js" defer></script><script src="./assets/src/fr/main.f53abb867492042c2448.js" defer></script></body>
+  <script>
+    <!--
+    window.exports = {};
+    navigator.getMedia = (
+      navigator.getUserMedia ||
+      navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia ||
+      navigator.msGetUserMedia
+    );
+    // document.getElementById('c1').click();
+    -->
+  </script>
+  <script id="mcjs">
+    !(function (c, h, i, m, p) {
+      (m = c.createElement(h)), (p = c.getElementsByTagName(h)[0]), (m.async = 1), (m.src = i), p.parentNode.insertBefore(m, p);
+    })(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/526ad64b76de1aa15d2f852df/5dabee875503ad918dfcf11dd.js");
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9HC2Z7R3K"></script>
+  <script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    (window.dataLayer = window.dataLayer || []), gtag("js", new Date()), gtag("config", "G-N9HC2Z7R3K");
+  </script>
+
+</html>
+
+<script type="text/javascript">
+!function(a,b,c,d,e,f,g,h){a.RaygunObject=e,a[e]=a[e]||function(){
+(a[e].o=a [e].o||[]).push(arguments)},f=b.createElement(c),g=b.getElementsByTagName(c)[0],
+f.async=1,f.src=d,g.parentNode.insertBefore(f,g),h=a.onerror,a.onerror=function(b,c,d,f,g){
+h&&h(b,c,d,f,g),g||(g=new Error(b)),a[e].q=a[e].q||[],a[e].q.push({
+e:g})}}(window,document,"script","//cdn.raygun.io/raygun4js/raygun.min.js","rg4js");
+</script>
+<script type="text/javascript">
+  rg4js('apiKey', '6z3AZfTLEG5reaulW1eGxw');
+  rg4js('enableCrashReporting', true);
+</script>

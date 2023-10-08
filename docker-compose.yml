@@ -1,0 +1,31 @@
+# docker-compose.yml
+version: '3'
+
+services:
+  web:
+    build: .
+    command: bash -c "sleep 6; ./manage.py migrate; ./manage.py create_superuser; while :; do ./manage.py runserver 0.0.0.0:9081 ; sleep 1; done"
+    volumes:
+      - .:/opt/ihm_server
+    ports:
+      - "9081:9081"
+    depends_on:
+      - db
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: mydatabaseuser
+      POSTGRES_PASSWORD: mydatabasepassword
+
+
+  # backend:
+  #   build: ./server/
+  #   command: bash -c "sleep 6; ./manage.py migrate; ./manage.py create_superuser; while :; do ./manage.py runserver 0.0.0.0:9081 ; sleep 1; done"
+  #   volumes:
+  #     - ./server:/opt/ihm_server
+  #   ports:
+  #     - "9081:9081"
+  #     - "9001:9001"
+  #   depends_on:
+  #     - dev_db

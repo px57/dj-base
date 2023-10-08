@@ -1,0 +1,1 @@
+python3 manage.py runserver 0.0.0.0:4242 --settings=server.settings_asgi
