@@ -1,4 +1,1 @@
-source ./venv/bin/activate
-python3 manage.py runserver 0.0.0.0:4141
-
-
+sudo docker-compose -f ./docker-compose.yml up
