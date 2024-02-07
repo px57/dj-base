@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django_crontab',
     'index',
     'mediacenter',
+    'sites',
 ]
 
 MIDDLEWARE = [
