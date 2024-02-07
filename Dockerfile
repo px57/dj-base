@@ -16,6 +16,7 @@ ENV FRONTEND_PORT "4201"
 
 RUN apt-get -y update
 RUN apt-get -y upgrade
+RUN apt-get install fish 
 
 # https://medium.com/@ratulbasak93/ffmpeg-latest-in-docker-or-ubuntu-16-04-4bd7ea750ca1
 
