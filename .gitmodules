@@ -10,6 +10,3 @@
 [submodule "token_manager"]
 	path = token_manager
 	url = https://github.com/px57/dj-token-manager
-[submodule "chatroom"]
-	path = chatroom
-	url = https://github.com/px57/dj-chatroom.git
